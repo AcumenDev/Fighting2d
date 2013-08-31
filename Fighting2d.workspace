@@ -2,5 +2,6 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Fighting2d">
 		<Project filename="Fighting_game/Fighting_game.cbp" />
+		<Project filename="Engine/Engine.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
