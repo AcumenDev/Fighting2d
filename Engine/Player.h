@@ -10,6 +10,7 @@ class Player : public IDraw
 
     protected:
     private:
+
 };
 
 #endif // PLAYER_H

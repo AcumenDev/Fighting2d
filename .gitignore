@@ -15,3 +15,6 @@
 #Code::Bloks
 *.layout
 bin
+
+#resorce
+*.bmp

@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1377970869 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
+1377981189 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
 	<iostream>
 	<windows.h>
 	"SDL2/SDL.h"
+	<chrono>
 
 1376276357 d:\my\git_repository\fighting2d\libs\sdl2\x86\dev\include\sdl2\sdl.h
 	"SDL_main.h"
