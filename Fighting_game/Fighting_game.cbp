@@ -32,10 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="../../libs/SDL2/x86/dev/include" />
+			<Add directory="../Engine/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-lSDL2 -lSDL2main" />
+			<Add option="-lSDL2 -lSDL2main -lEngine" />
 			<Add directory="../../libs/SDL2/x86/dev/lib" />
+			<Add directory="../Engine/bin/Debug" />
 		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>

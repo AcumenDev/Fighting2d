@@ -7,12 +7,13 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="../Fighting_game/bin/Debug/Engine" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/libEngine" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -33,10 +35,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../../libs/SDL2/x86/dev/include" />
+			<Add directory="include" />
 		</Compiler>
-		<Unit filename="IDraw.h" />
-		<Unit filename="Player.cpp" />
-		<Unit filename="Player.h" />
+		<Linker>
+			<Add option="-lSDL2 -lSDL2main" />
+			<Add directory="../../libs/SDL2/x86/dev/lib" />
+		</Linker>
+		<Unit filename="include/IDraw.h" />
+		<Unit filename="include/IPlayer.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/SceneControl.h" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/SceneControl.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -5,6 +5,9 @@
 #include "SDL2/SDL.h"
 #include <chrono>
 
+#include "SceneControl.h"
+#include "Player.h"
+
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 using std::chrono::steady_clock;
@@ -79,9 +82,19 @@ int main(int argc, char* argv[])
 //rect1->w=50;
 
     steady_clock::time_point start = steady_clock::now();
+    float x,y;
+    x=y=0;
 
-float x,y;
-x=y=0;
+    Player* player =  new Player(x,y);
+    //player.SetTexture(tex);
+    player->SetTexture(tex);
+
+
+SceneControl sceneControl;
+
+   sceneControl.AddObject(player);
+
+
     while (running) {
 
         float delta=   duration_cast<milliseconds>(steady_clock::now() - start).count();
@@ -102,7 +115,7 @@ x=y=0;
                     break;
                 }
                 case SDLK_RIGHT: {
-                     x+=delta*0.2;
+                    x+=delta*0.2;
                     break;
                 }
                 case SDLK_UP: {
@@ -114,6 +127,10 @@ x=y=0;
         }
         SDL_RenderClear(renderer);
         ApplySurface(x,y,tex,renderer);
+
+
+        sceneControl.Draw();
+
         SDL_RenderPresent(renderer);
 
     }
