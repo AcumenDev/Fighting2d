@@ -5,14 +5,13 @@
 #include "SDL2/SDL.h"
 #include <chrono>
 
-#include "SceneControl.h"
-#include "Player.h"
+#include "Engine.h"
 
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 using std::chrono::steady_clock;
 
-using namespace std;
+
 
 const int SCREEN_WIDTH  = 640;
 const int SCREEN_HEIGHT = 480;
@@ -47,7 +46,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    SDL_Window *window = SDL_CreateWindow("Lesson 2", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT,
+    SDL_Window *window = SDL_CreateWindow("", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT,
                                           SDL_WINDOW_SHOWN);
     if (window == nullptr) {
         logSDLError(std::cout, "CreateWindow");
@@ -90,9 +89,9 @@ int main(int argc, char* argv[])
     player->SetTexture(tex);
 
 
-SceneControl sceneControl;
+    SceneControl sceneControl;
 
-   sceneControl.AddObject(player);
+    sceneControl.AddObject(player);
 
 
     while (running) {
@@ -127,10 +126,7 @@ SceneControl sceneControl;
         }
         SDL_RenderClear(renderer);
         ApplySurface(x,y,tex,renderer);
-
-
-        sceneControl.Draw();
-
+       // sceneControl.Draw();
         SDL_RenderPresent(renderer);
 
     }

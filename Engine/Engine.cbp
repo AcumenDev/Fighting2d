@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="include/Render" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="include/Render" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -42,11 +44,18 @@
 			<Add option="-lSDL2 -lSDL2main" />
 			<Add directory="../../libs/SDL2/x86/dev/lib" />
 		</Linker>
+		<Unit filename="include/Engine.h" />
 		<Unit filename="include/IDraw.h" />
 		<Unit filename="include/IPlayer.h" />
+		<Unit filename="include/MainLoop.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/Render/IRender.h" />
+		<Unit filename="include/Render/RenderSDL2.h" />
 		<Unit filename="include/SceneControl.h" />
+		<Unit filename="src/MainLoop.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Render/IRender.cpp" />
+		<Unit filename="src/Render/RenderSDL2.cpp" />
 		<Unit filename="src/SceneControl.cpp" />
 		<Extensions>
 			<code_completion />

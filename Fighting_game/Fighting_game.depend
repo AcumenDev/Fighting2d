@@ -1,11 +1,10 @@
 # depslib dependency file v1.0
-1378055453 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
+1378151685 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
 	<iostream>
 	<windows.h>
 	"SDL2/SDL.h"
 	<chrono>
-	"SceneControl.h"
-	"Player.h"
+	"Engine.h"
 
 1376276357 d:\my\git_repository\fighting2d\libs\sdl2\x86\dev\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -328,4 +327,20 @@
 	<list>
 	<iostream>
 	"IDraw.h"
+
+1378149665 d:\my\git_repository\fighting2d\game\engine\include\engine.h
+	"MainLoop.h"
+	"Player.h"
+	"SceneControl.h"
+
+1378150478 d:\my\git_repository\fighting2d\game\engine\include\mainloop.h
+	<iostream>
+	<chrono>
+	"SDL2/SDL.h"
+
+1378150891 source:d:\my\git_repository\fighting2d\game\fighting_game\src\mainloopgame.cpp
+	"MainLoopGame.h"
+
+1378150211 d:\my\git_repository\fighting2d\game\fighting_game\src\mainloopgame.h
+	"Engine.h"
 
