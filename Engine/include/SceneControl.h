@@ -8,11 +8,12 @@ class SceneControl {
 public:
     SceneControl();
     virtual ~SceneControl();
-    void AddObject(IDraw * object);
+    IDraw * AddObject(IDraw * object);
     void Draw();
+    void Update(float delta);
 protected:
 private:
-    std::list<IDraw*> DrawsList;
+    std::list<IDraw*> _drawsList;
 };
 
 #endif // SCENECONTROL_H

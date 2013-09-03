@@ -8,15 +8,20 @@ SceneControl::~SceneControl() {
     //dtor
 }
 
-void SceneControl::AddObject(IDraw* object) {
-    DrawsList.push_back(object);
+IDraw * SceneControl::AddObject(IDraw* object) {
+    _drawsList.push_back(object);
+    return object;
 }
 
 void SceneControl::Draw() {
-    for(const auto &i : DrawsList) {
-       // i->Update(delta);
+    for(const auto &i : _drawsList) {
         i->Draw();
     }
 }
 
+void SceneControl::Update(float delta) {
+    for(const auto &i : _drawsList) {
+        i->Update(delta);
+    }
+}
 

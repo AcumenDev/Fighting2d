@@ -5,7 +5,7 @@
 #include "SDL2/SDL.h"
 #include <chrono>
 
-#include "Engine.h"
+#include "MainLoopGame.h"
 
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
@@ -16,9 +16,7 @@ using std::chrono::steady_clock;
 const int SCREEN_WIDTH  = 640;
 const int SCREEN_HEIGHT = 480;
 
-void logSDLError(std::ostream &os, const std::string &msg) {
-    os << msg << " error: " << SDL_GetError() << std::endl;
-}
+
 
 
 void ApplySurface(int x, int y, SDL_Texture *tex, SDL_Renderer *rend, SDL_Rect *clip = NULL) {
@@ -41,23 +39,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine,
 int main(int argc, char* argv[])
 #endif
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-        logSDLError(std::cout, "SDL_Init");
-        return 1;
-    }
+    Window window(600,800);
 
-    SDL_Window *window = SDL_CreateWindow("", 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT,
-                                          SDL_WINDOW_SHOWN);
-    if (window == nullptr) {
-        logSDLError(std::cout, "CreateWindow");
-        return 2;
-    }
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1,
-                             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    if (renderer == nullptr) {
-        logSDLError(std::cout, "CreateRenderer");
-        return 3;
-    }
+    window.Show();
+
     bool running = true;
 
 
@@ -67,7 +52,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    SDL_Texture *tex = SDL_CreateTextureFromSurface(renderer, bmp);
+    SDL_Texture *tex = SDL_CreateTextureFromSurface(window.GetRenderer(), bmp);
     SDL_FreeSurface(bmp);
     if (tex == nullptr) {
         std::cout << "SDL_CreateTextureFromSurface Error: " << SDL_GetError() << std::endl;
@@ -94,11 +79,16 @@ int main(int argc, char* argv[])
     sceneControl.AddObject(player);
 
 
+MainLoopGame mainLoopGame;
+
+mainLoopGame.SControl.AddObject(player);
+mainLoopGame.Start();
+
+
     while (running) {
 
         float delta=   duration_cast<milliseconds>(steady_clock::now() - start).count();
         start = steady_clock::now();
-
 
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
@@ -124,10 +114,10 @@ int main(int argc, char* argv[])
             }
             }
         }
-        SDL_RenderClear(renderer);
-        ApplySurface(x,y,tex,renderer);
+        SDL_RenderClear(window.GetRenderer());
+        ApplySurface(x,y,tex,window.GetRenderer());
        // sceneControl.Draw();
-        SDL_RenderPresent(renderer);
+        SDL_RenderPresent(window.GetRenderer());
 
     }
     SDL_Quit();

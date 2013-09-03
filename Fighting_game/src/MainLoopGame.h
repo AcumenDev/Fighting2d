@@ -8,8 +8,8 @@ class MainLoopGame : public MainLoop
         MainLoopGame();
         virtual ~MainLoopGame();
         void EventHandler(SDL_Event event) override;
-        void Draw(float delta)override;
-
+        void Draw() override;
+        void Update(float delta) override;
     protected:
     private:
 };

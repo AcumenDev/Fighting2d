@@ -34,7 +34,7 @@ void MainLoopGame::EventHandler(SDL_Event event) {
 }
 
 
-void MainLoopGame::Draw(float delta) {
+void MainLoopGame::Draw() {
 
 
 //    SDL_RenderClear(renderer);
@@ -43,3 +43,9 @@ void MainLoopGame::Draw(float delta) {
 //    SDL_RenderPresent(renderer);
 
 }
+
+void MainLoopGame::Update(float delta)
+{
+
+}
+
