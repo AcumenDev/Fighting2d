@@ -2,6 +2,7 @@
 #define PLAYER_H
 #include "IDraw.h"
 #include "IPlayer.h"
+#include "SpriteAnimation.h"
 
 class Player : public IDraw,IPlayer {
 public:
@@ -13,8 +14,8 @@ public:
     void Update(float delta)override;
     void Draw()override;
 
-    void SetTexture(SDL_Texture* texture) override;
-
+    void SetTexture(  SDL_Texture * texture) override;
+    void SetSpriteAnimation(  SpriteAnimation * spriteAnimation);
 
     void ToRight(float)override;
 
@@ -22,7 +23,7 @@ public:
 
 private:
     float _x,_y;
-    SDL_Texture* _texture;
+    SDL_Texture *  _texture;
 };
 
 #endif // PLAYER_H

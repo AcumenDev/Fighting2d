@@ -19,19 +19,18 @@ void Window::Show() {
     }
 
     _window = SDL_CreateWindow("", 100, 100, _width, _height,
-                                          SDL_WINDOW_SHOWN);
+                               SDL_WINDOW_SHOWN);
     if (_window == nullptr) {
         logSDLError(std::cout, "CreateWindow");
         // return 2;
     }
     _renderer = SDL_CreateRenderer(_window, -1,
-                             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (_renderer == nullptr) {
         logSDLError(std::cout, "CreateRenderer");
         //  return 3;
     }
 }
-SDL_Renderer * Window::GetRenderer()
-{
-   return _renderer;
+SDL_Renderer * Window::GetRenderer() {
+    return _renderer;
 }

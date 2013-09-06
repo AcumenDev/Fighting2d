@@ -45,7 +45,6 @@ int main(int argc, char* argv[])
 
     bool running = true;
 
-
     SDL_Surface *bmp = SDL_LoadBMP("test.bmp");
     if (bmp == nullptr) {
         std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
@@ -58,6 +57,7 @@ int main(int argc, char* argv[])
         std::cout << "SDL_CreateTextureFromSurface Error: " << SDL_GetError() << std::endl;
         return 1;
     }
+
 
 //SDL_Rect* rect1 =  new SDL_Rect;
 //rect1->x=11;
@@ -79,10 +79,10 @@ int main(int argc, char* argv[])
     sceneControl.AddObject(player);
 
 
-MainLoopGame mainLoopGame;
+    MainLoopGame mainLoopGame;
 
-mainLoopGame.SControl.AddObject(player);
-mainLoopGame.Start();
+    mainLoopGame.SControl.AddObject(player);
+    mainLoopGame.Start();
 
 
     while (running) {
@@ -116,7 +116,7 @@ mainLoopGame.Start();
         }
         SDL_RenderClear(window.GetRenderer());
         ApplySurface(x,y,tex,window.GetRenderer());
-       // sceneControl.Draw();
+        // sceneControl.Draw();
         SDL_RenderPresent(window.GetRenderer());
 
     }

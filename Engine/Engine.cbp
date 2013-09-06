@@ -52,12 +52,16 @@
 		<Unit filename="include/Render/IRender.h" />
 		<Unit filename="include/Render/RenderSDL2.h" />
 		<Unit filename="include/SceneControl.h" />
+		<Unit filename="include/SpriteAnimation.h" />
+		<Unit filename="include/Texture.h" />
 		<Unit filename="include/Window.h" />
 		<Unit filename="src/MainLoop.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Render/IRender.cpp" />
 		<Unit filename="src/Render/RenderSDL2.cpp" />
 		<Unit filename="src/SceneControl.cpp" />
+		<Unit filename="src/SpriteAnimation.cpp" />
+		<Unit filename="src/Texture.cpp" />
 		<Unit filename="src/Window.cpp" />
 		<Extensions>
 			<code_completion />

@@ -16,8 +16,12 @@ void Player::Draw() {
 
 }
 
-void Player::SetTexture(SDL_Texture* texture) {
+void Player::SetTexture( SDL_Texture* texture) {
     _texture=texture;
+}
+
+void Player::SetSpriteAnimation( SpriteAnimation * spriteAnimation) {
+
 }
 
 

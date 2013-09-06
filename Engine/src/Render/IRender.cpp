@@ -1,11 +1,9 @@
 #include "IRender.h"
 
-IRender::IRender()
-{
+IRender::IRender() {
     //ctor
 }
 
-IRender::~IRender()
-{
+IRender::~IRender() {
     //dtor
 }

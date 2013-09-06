@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1378230966 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
+1378483250 source:d:\my\git_repository\fighting2d\game\fighting_game\main.cpp
 	<iostream>
 	<windows.h>
 	"SDL2/SDL.h"
@@ -314,13 +314,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1378040190 d:\my\git_repository\fighting2d\game\engine\include\player.h
+1378483098 d:\my\git_repository\fighting2d\game\engine\include\player.h
 	"IDraw.h"
 	"IPlayer.h"
+	"SpriteAnimation.h"
 
 1378034511 d:\my\git_repository\fighting2d\game\engine\include\idraw.h
 
-1378040208 d:\my\git_repository\fighting2d\game\engine\include\iplayer.h
+1378483109 d:\my\git_repository\fighting2d\game\engine\include\iplayer.h
 	"SDL2/SDL.h"
 
 1378230831 d:\my\git_repository\fighting2d\game\engine\include\scenecontrol.h
@@ -347,12 +348,19 @@
 1378230676 d:\my\git_repository\fighting2d\game\fighting_game\src\mainloopgame.h
 	"Engine.h"
 
-1378150969 d:\my\git_repository\fighting2d\game\engine\include\render\rendersdl2.h
+1378483125 d:\my\git_repository\fighting2d\game\engine\include\render\rendersdl2.h
 	"IRender.h"
 
-1378150828 d:\my\git_repository\fighting2d\game\engine\include\render\irender.h
+1378483125 d:\my\git_repository\fighting2d\game\engine\include\render\irender.h
 
-1378230085 d:\my\git_repository\fighting2d\game\engine\include\window.h
+1378483125 d:\my\git_repository\fighting2d\game\engine\include\window.h
 	"iostream"
+	"SDL2/SDL.h"
+
+1378483125 d:\my\git_repository\fighting2d\game\engine\include\spriteanimation.h
+	"Texture.h"
+
+1378484091 d:\my\git_repository\fighting2d\game\engine\include\texture.h
+	<iostream>
 	"SDL2/SDL.h"
 

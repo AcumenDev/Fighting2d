@@ -2,13 +2,12 @@
 #define IRENDER_H
 
 
-class IRender
-{
-    public:
-        IRender();
-        virtual ~IRender();
-    protected:
-    private:
+class IRender {
+public:
+    IRender();
+    virtual ~IRender();
+protected:
+private:
 };
 
 #endif // IRENDER_H
