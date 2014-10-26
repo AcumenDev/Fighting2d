@@ -14,11 +14,10 @@ public:
     void Update(float delta)override;
     void Draw()override;
 
-    void SetTexture(  SDL_Texture * texture) override;
+    void SetTexture(SDL_Texture * texture) override;
     void SetSpriteAnimation(  SpriteAnimation * spriteAnimation);
 
     void ToRight(float)override;
-
     void ToLeft(float)override;
 
 private:

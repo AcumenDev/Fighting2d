@@ -9,9 +9,10 @@ class MainLoopGame : public MainLoop
         virtual ~MainLoopGame();
         void EventHandler(SDL_Event event) override;
         void Draw() override;
-        void Update(float delta) override;
+        void Update() override;
     protected:
     private:
+         Player* _player ;
 };
 
 #endif // MAINLOOPGAME_H

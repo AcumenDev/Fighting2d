@@ -16,9 +16,10 @@ void MainLoop::Start() {
         SDL_Event event;
         SDL_PollEvent(&event);
         EventHandler(event);
-        _Update(_GetDeltaTime());
+        _Update();
         _Draw();
     }
+      SDL_Quit();
 }
 
 float MainLoop::_GetDeltaTime() {
@@ -38,12 +39,12 @@ void MainLoop::Draw() {
 
 }
 
-void MainLoop::_Update(float delta) {
-    SControl.Update(delta);
-    Update(delta);
+void MainLoop::_Update() {
+    SControl.Update(_GetDeltaTime());
+    Update();
 }
 
-void MainLoop::Update(float delta) {
+void MainLoop::Update() {
 
 }
 

@@ -2,6 +2,9 @@
 
 MainLoopGame::MainLoopGame() {
     //ctor
+
+    _player =  new Player(0,0);
+
 }
 
 MainLoopGame::~MainLoopGame() {
@@ -18,11 +21,11 @@ void MainLoopGame::EventHandler(SDL_Event event) {
     case SDL_KEYDOWN : {
         switch(event.key.keysym.sym) {
         case SDLK_LEFT: {
-            // x-=delta*0.2;
+            _player->ToLeft(_GetDeltaTime()*0.2);
             break;
         }
         case SDLK_RIGHT: {
-            // x+=delta*0.2;
+            _player->ToRight(_GetDeltaTime()*0.2);
             break;
         }
         case SDLK_UP: {
@@ -41,11 +44,11 @@ void MainLoopGame::Draw() {
 //    ApplySurface(x,y,tex,renderer);
 //    // sceneControl.Draw();
 //    SDL_RenderPresent(renderer);
-
+_player->Draw();
 }
 
-void MainLoopGame::Update(float delta)
+void MainLoopGame::Update()
 {
-
+    _player->Update(_GetDeltaTime());
 }
 

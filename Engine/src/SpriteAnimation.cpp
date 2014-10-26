@@ -11,3 +11,8 @@ SpriteAnimation::~SpriteAnimation() {
 void SpriteAnimation::CreateAnimationFromTexture(const Texture& texture) {
 
 }
+
+void SpriteAnimation::AddAnimationKey(AnimationKey animationKey)
+{
+    _animationKeys.push_back(animationKey);
+}

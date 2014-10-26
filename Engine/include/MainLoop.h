@@ -16,12 +16,12 @@ public:
     void Stop();
     virtual void Draw();
     virtual void EventHandler(SDL_Event event);
-    virtual void Update(float delta);
+    virtual void Update();
 protected:
     float _GetDeltaTime();
 private:
     void _Draw();
-    void _Update(float delta);
+    void _Update();
     void _UpdateTime();
     bool _running;
     std::chrono::steady_clock::time_point _start;

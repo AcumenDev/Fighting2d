@@ -16,21 +16,22 @@ void Player::Draw() {
 
 }
 
-void Player::SetTexture( SDL_Texture* texture) {
+void Player::SetTexture(SDL_Texture* texture) {
     _texture=texture;
 }
 
-void Player::SetSpriteAnimation( SpriteAnimation * spriteAnimation) {
+void Player::SetSpriteAnimation(SpriteAnimation * spriteAnimation) {
 
 }
 
 
 void Player::ToRight(float m) {
+_x+=m;
 
 }
 
 void Player::ToLeft(float m) {
-
+_x-=m;
 }
 
 
